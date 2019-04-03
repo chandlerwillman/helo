@@ -9,6 +9,7 @@ require('dotenv').config({ path: __dirname + '/.env' });
 const controller = require('./controller');
 
 //deconstructed variables
+const { DB_CONNECTION_STRING } = process.env;
 
 //middleware
 const app = express();
@@ -16,6 +17,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //database connection
+massive(DB_CONNECTION_STRING, { scripts: __dirname + 'db' })
+  .then((dbInstance) => {
+        app.set('db',dbInstance);
+}).catch((error) => {
+    console.log('failed:', error);
+});
 
 //endpoints
 

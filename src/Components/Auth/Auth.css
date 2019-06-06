@@ -1,0 +1,35 @@
+.auth {
+    padding-top: 150px;
+}
+.login-logo img {
+    width: 75px;
+}
+.form-content {
+    padding: 30px;
+}
+h1 {
+    font-size: 55px;
+    font-weight: bold;
+    color: #ffffff;
+}
+label {
+    color: #ffffff;
+}
+input {
+    margin-left: 25px;
+}
+.button {
+    background-color: #403D39;
+    border-color: #403D39;
+    color: #ffffff;
+}
+.button.is-active {
+    border-color: #4a4a4a;
+    color: #f2f2f2;
+}
+#full-grad {
+    background-image: linear-gradient(to right, #FF70A6 ,#E9FF70);
+}
+#mid-grad {
+    background-image: linear-gradient(to right, #FF9770 ,#FFD670);
+}

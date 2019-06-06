@@ -17,14 +17,15 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //database connection
-massive(DB_CONNECTION_STRING, { scripts: __dirname + 'db' })
+massive(DB_CONNECTION_STRING, { scripts: __dirname + '/db' })
   .then((dbInstance) => {
-        app.set('db',dbInstance);
+    app.set('db',dbInstance);
 }).catch((error) => {
     console.log('failed:', error);
 });
 
 //endpoints
+app.post('/api/users', controller.createUser);
 
 //get server listening on a port
 app.listen(4005, () => {
